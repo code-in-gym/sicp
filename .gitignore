@@ -160,7 +160,10 @@ cython_debug/
 #.idea/
 
 
-# lab
+# lab, homework, project
 .ok_*
 .DS_Store
 lab*.zip
+hw*.zip
+hog.zip
+ok

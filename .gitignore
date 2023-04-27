@@ -167,3 +167,5 @@ lab*.zip
 hw*.zip
 hog.zip
 ok
+*.ok
+gui_files/

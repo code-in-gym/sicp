@@ -163,9 +163,5 @@ cython_debug/
 # lab, homework, project
 .ok_*
 .DS_Store
-lab*.zip
-hw*.zip
-hog.zip
 ok
 *.ok
-gui_files/

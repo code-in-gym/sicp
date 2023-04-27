@@ -146,8 +146,14 @@ def silence(score0, score1):
     return silence
 
 
+def say_scores(score0, score1):
+    """A commentary function that announces the score for each player."""
+    print("Player 0 now has", score0, "and Player 1 now has", score1)
+    return say_scores
+
+
 def play(strategy0, strategy1, score0=0, score1=0, dice=six_sided,
-         goal=GOAL_SCORE, say=silence):
+         goal=GOAL_SCORE, say=say_scores):
     """Simulate a game and return the final scores of both players, with Player
     0's score first, and Player 1's score second.
 
@@ -172,13 +178,15 @@ def play(strategy0, strategy1, score0=0, score1=0, dice=six_sided,
             who = other(who)
             if extra_turn(score0, score1):
                 who = other(who)
-            continue
+            say = say(score0, score1)
+            if score0 >= goal:
+                return score0, score1
         if who == 1:
             score1 += take_turn(strategy1(score1, score0), score0, dice)
             who = other(who)
             if extra_turn(score1, score0):
                 who = other(who)
-    return score0, score1
+            say = say(score0, score1)
     # END PROBLEM 5
     # (note that the indentation for the problem 6 prompt (***YOUR CODE HERE***) might be misleading)
     # BEGIN PROBLEM 6
@@ -190,12 +198,6 @@ def play(strategy0, strategy1, score0=0, score1=0, dice=six_sided,
 #######################
 # Phase 2: Commentary #
 #######################
-
-
-def say_scores(score0, score1):
-    """A commentary function that announces the score for each player."""
-    print("Player 0 now has", score0, "and Player 1 now has", score1)
-    return say_scores
 
 
 def announce_lead_changes(last_leader=None):

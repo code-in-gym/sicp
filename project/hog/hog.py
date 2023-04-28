@@ -27,7 +27,7 @@ def roll_dice(num_rolls, dice=six_sided):
     for _ in range(0, num_rolls):
         num = dice()
         if num == 1:
-           hasOne = True 
+            hasOne = True
         sum += num
     if hasOne:
         return 1
@@ -96,7 +96,7 @@ def swine_align(player_score, opponent_score):
     if opponent_score < 10:
         return False
     i = min(player_score, opponent_score)
-    while i >= 10 :
+    while i >= 10:
         if player_score % i == 0 and opponent_score % i == 0:
             return True
         i -= 1
@@ -123,7 +123,7 @@ def pig_pass(player_score, opponent_score):
     """
     # BEGIN PROBLEM 4b
     "*** YOUR CODE HERE ***"
-    diff = opponent_score - player_score 
+    diff = opponent_score - player_score
     if diff > 0 and diff < 3:
         return True
     return False
@@ -269,6 +269,20 @@ def announce_highest(who, last_score=0, running_high=0):
     assert who == 0 or who == 1, 'The who argument should indicate a player.'
     # BEGIN PROBLEM 7
     "*** YOUR CODE HERE ***"
+    def say(score0, score1):
+        turn_score, new_higher = 0, 0
+        if who == 0:
+            turn_score = score0 - last_score
+        elif who == 1:
+            turn_score = score1 - last_score
+        if turn_score > running_high:
+            new_higher = turn_score
+            print(new_higher, 'point(s)! The most yet for Player', who)
+        return announce_highest(
+            who,
+            score0 if who == 0 else score1,
+            running_high if new_higher == 0 else new_higher)
+    return say
     # END PROBLEM 7
 
 

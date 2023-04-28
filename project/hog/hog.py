@@ -153,7 +153,7 @@ def say_scores(score0, score1):
 
 
 def play(strategy0, strategy1, score0=0, score1=0, dice=six_sided,
-         goal=GOAL_SCORE, say=say_scores):
+         goal=GOAL_SCORE, say=silence):
     """Simulate a game and return the final scores of both players, with Player
     0's score first, and Player 1's score second.
 
@@ -323,6 +323,12 @@ def make_averaged(original_function, trials_count=1000):
     """
     # BEGIN PROBLEM 8
     "*** YOUR CODE HERE ***"
+    def run_average(*args):
+        sum = 0
+        for _ in range(trials_count):
+            sum += original_function(*args)
+        return sum / trials_count
+    return run_average
     # END PROBLEM 8
 
 
@@ -337,6 +343,16 @@ def max_scoring_num_rolls(dice=six_sided, trials_count=1000):
     """
     # BEGIN PROBLEM 9
     "*** YOUR CODE HERE ***"
+    run_average = make_averaged(roll_dice, trials_count)
+    num_roll = 1
+    highest_avg, result = 0, 0
+    while num_roll <= 10:
+        temp = run_average(num_roll, dice) 
+        if temp > highest_avg:
+            highest_avg = temp
+            result = num_roll
+        num_roll += 1
+    return result
     # END PROBLEM 9
 
 
@@ -386,7 +402,7 @@ def bacon_strategy(score, opponent_score, cutoff=8, num_rolls=6):
     rolls NUM_ROLLS otherwise.
     """
     # BEGIN PROBLEM 10
-    return 6  # Replace this statement
+    return 0 if free_bacon(opponent_score) >= cutoff else num_rolls
     # END PROBLEM 10
 
 
@@ -396,7 +412,7 @@ def extra_turn_strategy(score, opponent_score, cutoff=8, num_rolls=6):
     Otherwise, it rolls NUM_ROLLS.
     """
     # BEGIN PROBLEM 11
-    return 6  # Replace this statement
+    return 0 if extra_turn(score+free_bacon(opponent_score), opponent_score) else bacon_strategy(score, opponent_score,cutoff,num_rolls)
     # END PROBLEM 11
 
 

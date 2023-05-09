@@ -116,7 +116,7 @@ def max_subseq(n, t):
     "*** YOUR CODE HERE ***"
     if t == 0:
         return 0
-    if n < 10 :
+    if n < 10:
         return n
     return max(max_subseq(n//10, t-1)*10+n%10, max_subseq(n//10, t))
 

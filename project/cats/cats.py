@@ -132,7 +132,7 @@ def shifty_shifts(start, goal, limit):
         return len(start)
     diff = 0
     if start[0] != goal[0]:
-        limit -=1
+        limit -= 1
         diff = 1
     return diff + shifty_shifts(start[1:], goal[1:], limit)
     # END PROBLEM 6
@@ -140,27 +140,17 @@ def shifty_shifts(start, goal, limit):
 
 def pawssible_patches(start, goal, limit):
     """A diff function that computes the edit distance from START to GOAL."""
-
-    # add
-    # delete
-    # substitute
-    if ______________: # Fill in the condition
-        # BEGIN
-        "*** YOUR CODE HERE ***"
-        # END
-
-    elif ___________: # Feel free to remove or add additional cases
-        # BEGIN
-        "*** YOUR CODE HERE ***"
-        # END
-
+    if limit < 0:
+        return 0
+    elif len(start) == 0 or len(goal) == 0:
+        return len(goal) + len(start)
+    elif start[0] == goal[0]:
+        return pawssible_patches(start[1:], goal[1:], limit)
     else:
-        add_diff = ... # Fill in these lines
-        remove_diff = ...
-        substitute_diff = ...
-        # BEGIN
-        "*** YOUR CODE HERE ***"
-        # END
+        add_diff = 1 + pawssible_patches(start, goal[1:], limit-1)
+        remove_diff = 1 + pawssible_patches(start[1:], goal, limit-1)
+        substitute_diff = 1 + pawssible_patches(start[1:], goal[1:], limit-1)
+        return min(add_diff, remove_diff, substitute_diff)
 
 
 def final_diff(start, goal, limit):
@@ -177,6 +167,16 @@ def report_progress(typed, prompt, user_id, send):
     """Send a report of your id and progress so far to the multiplayer server."""
     # BEGIN PROBLEM 8
     "*** YOUR CODE HERE ***"
+    progress = len(typed)/len(prompt)
+    for i in range(len(typed)):
+        if typed[i] != prompt[i]:
+            progress = i/len(prompt)
+            break
+    send({
+        'id': user_id,
+        'progress': progress,
+    })
+    return progress
     # END PROBLEM 8
 
 
@@ -203,6 +203,12 @@ def time_per_word(times_per_player, words):
     """
     # BEGIN PROBLEM 9
     "*** YOUR CODE HERE ***"
+    times = []
+    for i in range(len(times_per_player)):
+        times.append([])
+        for j in range(len(times_per_player[i])-1):
+            times[i].append(times_per_player[i][j+1] - times_per_player[i][j])
+    return game(words, times)
     # END PROBLEM 9
 
 
@@ -215,18 +221,36 @@ def fastest_words(game):
         a list of lists containing which words each player typed fastest
     """
     player_indices = range(len(all_times(game)))  # contains an *index* for each player
-    word_indices = range(len(all_words(game)))    # contains an *index* for each word
+    # contains an *index* for each word
+    word_indices = range(len(all_words(game)))
     # BEGIN PROBLEM 10
     "*** YOUR CODE HERE ***"
+    fw = []
+    for _ in player_indices:
+        fw.append([])
+    for w in word_indices:
+        min_time = time(game, 0, w)
+        min_player = 0
+        for p in player_indices:
+            t = time(game, p, w)
+            if min_time > t:
+                min_time = t
+                min_player = p
+        fw[min_player].append(word_at(game, w))
+    return fw
     # END PROBLEM 10
 
 
 def game(words, times):
     """A data abstraction containing all words typed and their times."""
-    assert all([type(w) == str for w in words]), 'words should be a list of strings'
-    assert all([type(t) == list for t in times]), 'times should be a list of lists'
-    assert all([isinstance(i, (int, float)) for t in times for i in t]), 'times lists should contain numbers'
-    assert all([len(t) == len(words) for t in times]), 'There should be one word per time.'
+    assert all([type(w) == str for w in words]
+               ), 'words should be a list of strings'
+    assert all([type(t) == list for t in times]
+               ), 'times should be a list of lists'
+    assert all([isinstance(i, (int, float))
+               for t in times for i in t]), 'times lists should contain numbers'
+    assert all([len(t) == len(words) for t in times]
+               ), 'There should be one word per time.'
     return [words, times]
 
 
@@ -257,6 +281,7 @@ def game_string(game):
     """A helper function that takes in a game object and returns a string representation of it"""
     return "game(%s, %s)" % (game[0], game[1])
 
+
 enable_multiplayer = False  # Change to True when you're ready to race.
 
 ##########################
@@ -267,7 +292,7 @@ enable_multiplayer = False  # Change to True when you're ready to race.
 def run_typing_test(topics):
     """Measure typing speed and accuracy on the command line."""
     paragraphs = lines_from_file('data/sample_paragraphs.txt')
-    select = lambda p: True
+    def select(p): return True
     if topics:
         select = about(topics)
     i = 0

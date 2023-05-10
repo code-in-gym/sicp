@@ -13,18 +13,22 @@ Follow [cs61a/fa20](https://inst.eecs.berkeley.edu/~cs61a/fa20/) or https://cs61
 
 - [X] [Lab00](https://inst.eecs.berkeley.edu/~cs61a/fa20/lab/lab00/)
 - [X] [Lab01](https://inst.eecs.berkeley.edu/~cs61a/fa20/lab/lab01/)
-- [ ] [Lab02](https://inst.eecs.berkeley.edu/~cs61a/fa20/lab/lab02/)
+- [X] [Lab02](https://inst.eecs.berkeley.edu/~cs61a/fa20/lab/lab02/)
+- [X] [Lab03](https://inst.eecs.berkeley.edu/~cs61a/fa20/lab/lab03/)
+- [X] [Lab04](https://inst.eecs.berkeley.edu/~cs61a/fa20/lab/lab04/)
 
 ## Homework
 
 - [X] [Hw01](https://inst.eecs.berkeley.edu/~cs61a/fa20/hw/hw01/)
-- [ ] [Hw02](https://inst.eecs.berkeley.edu/~cs61a/fa20/hw/hw02/)
+- [X] [Hw02](https://inst.eecs.berkeley.edu/~cs61a/fa20/hw/hw02/)
+- [ ] [Hw03](https://inst.eecs.berkeley.edu/~cs61a/fa20/hw/hw03/)
 
 
 ## Project
 
-- [ ] [Hog](https://inst.eecs.berkeley.edu/~cs61a/fa20/proj/hog/)
-- [ ] [Hog Contest](https://inst.eecs.berkeley.edu/~cs61a/fa20/proj/hog_contest/)
+- [X] [Hog](https://inst.eecs.berkeley.edu/~cs61a/fa20/proj/hog/)
+- [ ] ~~[Hog Contest](https://inst.eecs.berkeley.edu/~cs61a/fa20/proj/hog_contest/)~~
+- [X] [Cats](https://inst.eecs.berkeley.edu/~cs61a/fa20/proj/cats/)
 
 ---
 

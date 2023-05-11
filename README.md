@@ -16,6 +16,7 @@ Follow [cs61a/fa20](https://inst.eecs.berkeley.edu/~cs61a/fa20/).
 - [X] [Lab02](https://inst.eecs.berkeley.edu/~cs61a/fa20/lab/lab02/)
 - [X] [Lab03](https://inst.eecs.berkeley.edu/~cs61a/fa20/lab/lab03/)
 - [X] [Lab04](https://inst.eecs.berkeley.edu/~cs61a/fa20/lab/lab04/)
+- [X] [Lab05](https://inst.eecs.berkeley.edu/~cs61a/fa20/lab/lab05/)
 
 ## Homework
 

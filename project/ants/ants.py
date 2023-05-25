@@ -315,7 +315,6 @@ class WallAnt(Ant):
 
     def __init__(self, armor=4):
         Ant.__init__(self, armor)
-
 # END Problem 7
 
 
@@ -327,34 +326,45 @@ class Water(Place):
         its armor to 0."""
         # BEGIN Problem 8
         "*** YOUR CODE HERE ***"
-        if insect.is_watersafe:
-            Place.add_insect(insect.place, insect)
-        else:
-            if insect.place:
-                Insect.reduce_armor(insect, insect.armor)
-            else:
-                insect.armor = 0
+        Place.add_insect(self, insect)
+        if not insect.is_watersafe:
+            Insect.reduce_armor(insect, insect.armor)
         # END Problem 8
 
 # BEGIN Problem 9
 # The ScubaThrower class
+class ScubaThrower(ThrowerAnt):
+    """ScubaThrower, which is a subclass of ThrowerAnt that is more costly and watersafe, but otherwise identical to its base class. 
+    A ScubaThrower should not lose its armor when placed in Water.""" 
+    name = 'Scuba'
+    implemented = True
+    food_cost = 6
+    is_watersafe = True
+
+    def __init__(self, armor=1):
+        ThrowerAnt.__init__(self, armor)
 # END Problem 9
 
 # BEGIN Problem EC
-class QueenAnt(Ant):  # You should change this line
+class QueenAnt(ScubaThrower):  # You should change this line
 # END Problem EC
     """The Queen of the colony. The game is over if a bee enters her place."""
 
     name = 'Queen'
     food_cost = 7
     # OVERRIDE CLASS ATTRIBUTES HERE
+    had_queen = False
     # BEGIN Problem EC
-    implemented = False   # Change to True to view in the GUI
+    implemented = True   # Change to True to view in the GUI
     # END Problem EC
 
     def __init__(self, armor=1):
         # BEGIN Problem EC
         "*** YOUR CODE HERE ***"
+        self.is_real_queen = False if QueenAnt.had_queen else True
+        print("DEBUG:", self.is_real_queen)
+        QueenAnt.had_queen = True
+        ScubaThrower.__init__(self, armor)
         # END Problem EC
 
     def action(self, gamestate):
@@ -365,6 +375,16 @@ class QueenAnt(Ant):  # You should change this line
         """
         # BEGIN Problem EC
         "*** YOUR CODE HERE ***"
+        if not self.is_real_queen:
+            self.reduce_armor(self.armor)
+            return
+        ScubaThrower.action(self, gamestate)
+        exit = self.place.exit
+        while exit:
+            if exit.ant and not hasattr(exit.ant, 'had_doubled'):
+                exit.ant.damage *= 2
+                exit.ant.had_doubled = True
+            exit = exit.exit
         # END Problem EC
 
     def reduce_armor(self, amount):
@@ -373,7 +393,16 @@ class QueenAnt(Ant):  # You should change this line
         """
         # BEGIN Problem EC
         "*** YOUR CODE HERE ***"
+        ScubaThrower.reduce_armor(self, amount)
+        if self.armor <= 0 and self.is_real_queen:
+            bees_win()
         # END Problem EC
+
+    def remove_from(self, Place):
+        if self.is_real_queen:
+            return
+        ScubaThrower.remove_from(self, Place)
+
 
 
 

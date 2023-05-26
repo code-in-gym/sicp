@@ -380,9 +380,9 @@ class QueenAnt(ScubaThrower):  # You should change this line
         ScubaThrower.action(self, gamestate)
         exit = self.place.exit
         while exit:
-            if exit.ant and not hasattr(exit.ant, 'had_doubled'):
+            if exit.ant and not hasattr(exit.ant, 'had_doubled_damage'):
                 exit.ant.damage *= 2
-                exit.ant.had_doubled = True
+                exit.ant.had_doubled_damage = True
             exit = exit.exit
         # END Problem EC
 

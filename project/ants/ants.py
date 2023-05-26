@@ -362,7 +362,6 @@ class QueenAnt(ScubaThrower):  # You should change this line
         # BEGIN Problem EC
         "*** YOUR CODE HERE ***"
         self.is_real_queen = False if QueenAnt.had_queen else True
-        print("DEBUG:", self.is_real_queen)
         QueenAnt.had_queen = True
         ScubaThrower.__init__(self, armor)
         # END Problem EC

@@ -33,7 +33,7 @@ Follow [cs61a/fa20](https://inst.eecs.berkeley.edu/~cs61a/fa20/).
 - [X] [Hog](https://inst.eecs.berkeley.edu/~cs61a/fa20/proj/hog/)
 - [ ] ~~[Hog Contest](https://inst.eecs.berkeley.edu/~cs61a/fa20/proj/hog_contest/)~~
 - [X] [Cats](https://inst.eecs.berkeley.edu/~cs61a/fa20/proj/cats/)
-- [ ] [Ants](https://inst.eecs.berkeley.edu/~cs61a/fa20/proj/ants/)
+- [X] [Ants](https://inst.eecs.berkeley.edu/~cs61a/fa20/proj/ants/)
 
 ---
 

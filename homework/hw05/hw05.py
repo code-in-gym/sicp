@@ -142,8 +142,7 @@ def store_digits(n):
     if n // 10 == 0:
         return Link(n)
     mul_ten = 10
-    num = n
-    while num // mul_ten > 9:
+    while n // mul_ten > 9:
         mul_ten *= 10
     mul_num = 1 if mul_ten < 0 else mul_ten
     return Link(n//mul_num, store_digits(n-(n//mul_num)*mul_num))

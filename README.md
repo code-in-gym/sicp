@@ -19,6 +19,8 @@ Follow [cs61a/fa20](https://inst.eecs.berkeley.edu/~cs61a/fa20/).
 - [X] [Lab05](https://inst.eecs.berkeley.edu/~cs61a/fa20/lab/lab05/)
 - [X] [Lab06](https://inst.eecs.berkeley.edu/~cs61a/fa20/lab/lab06/)
 - [X] [Lab07](https://inst.eecs.berkeley.edu/~cs61a/fa20/lab/lab07/)
+- [X] [Lab08](https://inst.eecs.berkeley.edu/~cs61a/fa20/lab/lab08/)
+- [ ] [Lab09](https://inst.eecs.berkeley.edu/~cs61a/fa20/lab/lab09/)
 
 ## Homework
 
@@ -26,6 +28,7 @@ Follow [cs61a/fa20](https://inst.eecs.berkeley.edu/~cs61a/fa20/).
 - [X] [Hw02](https://inst.eecs.berkeley.edu/~cs61a/fa20/hw/hw02/)
 - [X] [Hw03](https://inst.eecs.berkeley.edu/~cs61a/fa20/hw/hw03/)
 - [X] [Hw04](https://inst.eecs.berkeley.edu/~cs61a/fa20/hw/hw04/)
+- [X] [Hw05](https://inst.eecs.berkeley.edu/~cs61a/fa20/hw/hw05/)
 
 
 ## Project
@@ -34,6 +37,7 @@ Follow [cs61a/fa20](https://inst.eecs.berkeley.edu/~cs61a/fa20/).
 - [ ] ~~[Hog Contest](https://inst.eecs.berkeley.edu/~cs61a/fa20/proj/hog_contest/)~~
 - [X] [Cats](https://inst.eecs.berkeley.edu/~cs61a/fa20/proj/cats/)
 - [X] [Ants](https://inst.eecs.berkeley.edu/~cs61a/fa20/proj/ants/)
+- [ ] [Scheme](https://inst.eecs.berkeley.edu/~cs61a/fa20/proj/scheme_stubbed/)
 
 ---
 

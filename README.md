@@ -21,6 +21,7 @@ Follow [cs61a/fa20](https://inst.eecs.berkeley.edu/~cs61a/fa20/).
 - [X] [Lab07](https://inst.eecs.berkeley.edu/~cs61a/fa20/lab/lab07/)
 - [X] [Lab08](https://inst.eecs.berkeley.edu/~cs61a/fa20/lab/lab08/)
 - [ ] [Lab09](https://inst.eecs.berkeley.edu/~cs61a/fa20/lab/lab09/)
+- [X] [Lab10](https://inst.eecs.berkeley.edu/~cs61a/fa20/lab/lab10/)
 
 ## Homework
 
@@ -29,6 +30,7 @@ Follow [cs61a/fa20](https://inst.eecs.berkeley.edu/~cs61a/fa20/).
 - [X] [Hw03](https://inst.eecs.berkeley.edu/~cs61a/fa20/hw/hw03/)
 - [X] [Hw04](https://inst.eecs.berkeley.edu/~cs61a/fa20/hw/hw04/)
 - [X] [Hw05](https://inst.eecs.berkeley.edu/~cs61a/fa20/hw/hw05/)
+- [ ] [Hw06](https://inst.eecs.berkeley.edu/~cs61a/fa20/hw/hw06/)
 
 
 ## Project

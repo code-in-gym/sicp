@@ -38,13 +38,11 @@
 )
 
 (define (filter_lst item lst)
-  (if (null? lst) nil 
-    (if (= (car lst) item) 
-      (filter_lst item (cdr lst))
-      (cons (car lst) (filter_lst item (cdr lst)))
-    )
-  )
-)
+  (cond
+    ((null? lst) nil)
+    ((= (car lst) item) (filter_lst item (cdr lst)))
+    (else (cons (car lst) (filter_lst item (cdr lst))))
+))
 
 ;;; Tests
 (remove 3 nil)

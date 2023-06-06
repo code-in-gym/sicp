@@ -32,7 +32,7 @@ Follow [cs61a/fa20](https://inst.eecs.berkeley.edu/~cs61a/fa20/).
 - [X] [Hw04](https://inst.eecs.berkeley.edu/~cs61a/fa20/hw/hw04/)
 - [X] [Hw05](https://inst.eecs.berkeley.edu/~cs61a/fa20/hw/hw05/)
 - [X] [Hw06](https://inst.eecs.berkeley.edu/~cs61a/fa20/hw/hw06/)
-- [ ] [Hw07](https://inst.eecs.berkeley.edu/~cs61a/fa20/hw/hw07/)
+- [X] [Hw07](https://inst.eecs.berkeley.edu/~cs61a/fa20/hw/hw07/)
 - [ ] [Hw08](https://inst.eecs.berkeley.edu/~cs61a/fa20/hw/hw08/)
 
 
